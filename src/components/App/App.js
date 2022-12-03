@@ -20,11 +20,11 @@ class App extends Component {
 
     if (this.checkContactName(newContact.name)) {
       alert(`${newContact.name} is already in contacts`);
-    } else {
-      this.setState(({ contacts }) => ({
-        contacts: [newContact, ...contacts],
-      }));
+      return newContact.name;
     }
+    this.setState(({ contacts }) => ({
+      contacts: [newContact, ...contacts],
+    }));
   };
 
   checkContactName = newName => {
